@@ -71,13 +71,13 @@ def main():
 '''
     try:
         mode = sys.argv[1]
-    except:        
+    except IndexError:
         print(doc)
     else:
         if mode == "-fan":
             try:
                 str = sys.argv[2]
-            except:
+            except IndexError:
                 str = "简繁转换"
             else:
                 if str == "":
@@ -86,7 +86,7 @@ def main():
         elif mode == "-jian":
             try:
                 str = sys.argv[2]
-            except:
+            except IndexError:
                 str = "簡繁轉換"
             else:
                 if str == "":
@@ -95,7 +95,7 @@ def main():
         elif mode == "-zijian":
             try:
                 str = sys.argv[2]
-            except:
+            except IndexError:
                 str = "妳"
             else:
                 if str == "":
@@ -104,7 +104,7 @@ def main():
         elif mode == "-zifan":
             try:
                 str = sys.argv[2]
-            except:
+            except IndexError:
                 str = "你"
             else:
                 if str == "":
@@ -112,6 +112,7 @@ def main():
             print(JianFan().zi_fan(str))
         else:
             print(doc)
+
 
 if(__name__ == "__main__"):
     main()
