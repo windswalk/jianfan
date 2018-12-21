@@ -74,44 +74,21 @@ def main():
     except IndexError:
         print(doc)
     else:
-        if mode == "-fan":
-            try:
-                str = sys.argv[2]
-            except IndexError:
-                str = "简繁转换"
-            else:
-                if str == "":
-                    str = "简繁转换"
-            print(JianFan().fan(str))
-        elif mode == "-jian":
-            try:
-                str = sys.argv[2]
-            except IndexError:
-                str = "簡繁轉換"
-            else:
-                if str == "":
-                    str = "簡繁轉換"
-            print(JianFan().jian(str))
-        elif mode == "-zijian":
-            try:
-                str = sys.argv[2]
-            except IndexError:
-                str = "妳"
-            else:
-                if str == "":
-                    str = "妳"
-            print(JianFan().zi_jian(str))
-        elif mode == "-zifan":
-            try:
-                str = sys.argv[2]
-            except IndexError:
-                str = "你"
-            else:
-                if str == "":
-                    str = "你"
-            print(JianFan().zi_fan(str))
-        else:
+        try:
+            str = sys.argv[2]
+        except IndexError:
             print(doc)
+        else:
+            if mode == "-fan":
+                print(JianFan().fan(str))
+            elif mode == "-jian":
+                print(JianFan().jian(str))
+            elif mode == "-zijian":
+                print(JianFan().zi_jian(str))
+            elif mode == "-zifan":
+                print(JianFan().zi_fan(str))
+            else:
+                print(doc)
 
 
 if(__name__ == "__main__"):
