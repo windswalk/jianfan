@@ -32,10 +32,10 @@ class JianFan(object):
         return self.map_all(self.t(), self.s(), char)
 
     def s(self):
-        return self.load_file("s.txt")
+        return self.load_file("txt/s/s.txt")
 
     def t(self):
-        return self.load_file("t.txt")
+        return self.load_file("txt/t/t.txt")
 
     def convert(self, str, src, dst):
         for n in range(0, len(src)):
