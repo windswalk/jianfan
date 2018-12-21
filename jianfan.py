@@ -31,17 +31,6 @@ class JianFan(object):
     def zi_jian(self, char):
         return self.map_all(self.t(), self.s(), char)
 
-    def side(self, char):
-        sn = self.s().find(char)
-        tn = self.t().find(char)
-        if sn >= 0 and tn >= 0:
-            return "Both"
-        if sn >= 0 and tn < 0:
-            return "Jian"
-        if tn >= 0 and sn < 0:
-            return "Fan"
-        return "None"
-
     def s(self):
         return self.load_file("s.txt")
 
