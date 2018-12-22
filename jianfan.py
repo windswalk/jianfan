@@ -26,10 +26,16 @@ class JianFan(object):
         return char_list
 
     def zi_fan(self, char):
-        return self.map_all(self.s(), self.t(), char)
+        return self.map_all(self.s_dup(), self.t_dup(), char)
 
     def zi_jian(self, char):
-        return self.map_all(self.t(), self.s(), char)
+        return self.map_all(self.t_dup(), self.s_dup(), char)
+
+    def s_dup(self):
+        return self.load_file("txt/s/s_dup_char.txt")
+
+    def t_dup(self):
+        return self.load_file("txt/t/t_dup_char.txt")
 
     def s(self):
         return self.load_file("txt/s/s.txt")
@@ -49,6 +55,14 @@ class JianFan(object):
 
     def jian(self, str):
         return self.convert(str, self.t(), self.s())
+
+
+def jian(str):
+    return JianFan().jian(str)
+
+
+def fan(str):
+    return JianFan().fan(str)
 
 
 def main():
